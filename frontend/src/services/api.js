@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:4000";
+const API_BASE = "https://vercel.com/mokshadaaas-projects/career-vista-zd19/AZf2ohYpAs34AtY2G7fpCi5uhmZh";
 
 export async function registerUser(data) {
   const res = await fetch(`${API_BASE}/user/register`, {
