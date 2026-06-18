@@ -4,8 +4,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import http from "http";
+import dns from "dns";
 import { server as WebSocketServer } from "websocket";
 import { CounselorModel, UserModel, VideoModel, FeedbackModel } from "./model.js";
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 dotenv.config();
 
@@ -365,7 +368,7 @@ wsServer.on("request", (req) => {
 
 mongoose
   .connect(MONGO_URI)
-  .then(() => {
+  .then(() => { 
     server.listen(port, () => {
       console.log(`Server running on http://localhost:${port}`);
       console.log(`WebSocket (WebRTC) running on ws://localhost:${port}`);
