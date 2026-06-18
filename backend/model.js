@@ -112,11 +112,3 @@ const VideoSchema = new Schema({
 
 // Export VideoModel
 export const VideoModel = model("video", VideoSchema);
-
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://biancan2601:ZguGeLE0kITQIWY0@careervista.ppqol.mongodb.net/?retryWrites=true&w=majority&appName=CareerVista', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch((err) => console.error('Failed to connect to MongoDB:', err));
